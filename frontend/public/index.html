@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kubernetes Lab</title>
+</head>
+<body>
+    <h1>Frontend App</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <div id="result"></div>
+    <script>
+        async function fetchData() {
+            const res = await fetch('/api/data');
+            const data = await res.json();
+            document.getElementById('result').innerHTML = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
